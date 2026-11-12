@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Mukta:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-hindi: 'Mukta', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFDF5;
+  color: #2C2219;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDF5;
+}
+::-webkit-scrollbar-thumb {
+  background: #76A85B;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #245C38;
+}
+
+/* Milk / Ghee gradient badges */
+.bg-warm-pattern {
+  background-color: #FFFDF5;
+  background-image: radial-gradient(#245c3810 1px, transparent 1px), radial-gradient(#e8b84a15 1px, #FFFDF5 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #E8B84A, #76A85B, #E8B84A) 1;
+}
+
+/* Gentle pulse for WhatsApp button */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-whatsapp-pulse {
+  animation: softPulse 2.4s infinite ease-in-out;
+}
