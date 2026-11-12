@@ -90,7 +90,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-elevated border-4 border-warm-cream">
                 <Image
-                  src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=1000&q=80"
+                  src="/images/sahiwal-cow.jpg"
                   alt="Sahiwal cow at Kailash Kamdhenu Dairy Farm"
                   fill
                   className="object-cover"

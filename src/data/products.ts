@@ -11,7 +11,7 @@ export const initialProducts: Product[] = [
       'Directly milked twice a day and chilled immediately to retain all natural nutrients. Packed with A2 beta-casein proteins, easy on digestion, naturally sweet, with no added water, preservatives, or hormones. Delivered in clean food-grade glass/stainless steel containers.',
     descriptionHi:
       'दिन में दो बार ताज़ा निकाला गया दूध जिसे तुरंत ठंडा कर पोषक तत्वों को सुरक्षित रखा जाता है। A2 बीटा-कैसीन प्रोटीन से भरपूर, पाचन में आसान, प्राकृतिक मिठास युक्त, जिसमें कोई मिलावटी पानी, पाउडर या हार्मोन नहीं हैं। स्वच्छ खाद्य-ग्रेड कंटेनरों में सुरक्षित डिलीवरी।',
-    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/pure-milk.jpg',
     badgesEn: ['100% A2 Protein', 'Zero Adulteration', 'Raw & Unprocessed', 'Morning Delivery'],
     badgesHi: ['100% A2 प्रोटीन', 'शून्य मिलावट', 'प्राकृतिक कच्चा दूध', 'सुबह की डिलीवरी'],
     benefitsEn: [
@@ -57,7 +57,7 @@ export const initialProducts: Product[] = [
       'Made following the authentic 5-step ancient Vedic Bilona method. Fresh A2 milk is boiled in earthen pots, cultured into thick curd overnight, churned using a traditional wooden bilona (two-way churner) at dawn to extract makkhan, and then slow-simmered on low firewood flame. Granular, rich golden aroma, and medicinal Ayurvedic qualities.',
     descriptionHi:
       'प्राचीन 5-चरणीय वैदिक बिलौना पद्धति से निर्मित। ताज़ा A2 दूध को मिट्टी की हांडी में गर्म कर रात भर दही जमाया जाता है, भोर में पारंपरिक लकड़ी की मथानी (बिलौना) से मथकर मक्खन निकाला जाता है, और फिर धीमी उपलों/लकड़ी की आंच पर पकाया जाता है। सुनहरी खुशबूदार दानेदार शुद्ध देसी घी।',
-    image: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/desi-ghee.jpg',
     badgesEn: ['Vedic Bilona Method', 'Curd-Cultured Ghee', 'Golden Granular (Danedar)', 'Ayurvedic Grade'],
     badgesHi: ['वैदिक बिलौना विधि', 'दही से निर्मित मक्खन', 'सुनहरा दानेदार', 'आयुर्वेदिक गुणवत्ता'],
     benefitsEn: [
@@ -94,4 +94,3 @@ export const initialProducts: Product[] = [
     storageHi: 'सीधी धूप से दूर ठंडी व सूखी जगह पर रखें। गीले चम्मच का प्रयोग न करें।'
   }
 ];
-

@@ -10,6 +10,7 @@ import TrustIndicators from '@/components/TrustIndicators';
 import ProductCard from '@/components/ProductCard';
 import CowBreeds from '@/components/CowBreeds';
 import QualityProcess from '@/components/QualityProcess';
+import PhotoCardsSection from '@/components/PhotoCardsSection';
 import DeliveryZones from '@/components/DeliveryZones';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import {
@@ -36,7 +37,7 @@ export default function HomePage() {
         {/* Background Hero Image with Dark Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=2000&q=85"
+            src="/images/hero-bg.jpg"
             alt="Gir and Sahiwal Cow at Kailash Kamdhenu Dairy Farm"
             fill
             priority
@@ -161,6 +162,9 @@ export default function HomePage() {
       {/* OUR COWS SECTION (Sahiwal and Gir) */}
       <CowBreeds />
 
+      {/* PHOTO CARDS SHOWCASE SECTION */}
+      <PhotoCardsSection />
+
       {/* HOW WE MAINTAIN QUALITY & VEDIC BILONA PROCESS */}
       <QualityProcess />
 
@@ -209,4 +213,3 @@ export default function HomePage() {
     </div>
   );
 }
-

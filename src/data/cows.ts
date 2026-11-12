@@ -23,7 +23,7 @@ export const cowBreeds: CowBreed[] = [
       'हरे बरसीम, चरी, जौ, चने की चूनी और जैविक आहार पर पोषित',
       'अत्यंत शांत व ममतामयी स्वभाव'
     ],
-    image: 'https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/sahiwal-cow.jpg',
     taglineEn: 'Known for the sweetest and thickest natural A2 milk in India.',
     taglineHi: 'भारत में सबसे स्वादिष्ट, प्राकृतिक मीठे और गाढ़े दूध के लिए प्रसिद्ध।'
   },
@@ -49,7 +49,7 @@ export const cowBreeds: CowBreed[] = [
       'पाचन में बेहद हल्का, वैदिक बिलौना घी बनाने के लिए सर्वोत्तम',
       'खुले बाड़े में स्वच्छ हवा, धूप और शुद्ध जल के बीच प्राकृतिक जीवन'
     ],
-    image: 'https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/gir-cow.jpg',
     taglineEn: 'The Vedic mother cow whose golden ghee is revered in Ayurveda.',
     taglineHi: 'वैदिक कामधेनु जिसकी सुनहरी पौष्टिकता आयुर्वेद में अमृत समान मानी गई है।'
   }
@@ -89,4 +89,3 @@ export const farmQualityPillars = [
     icon: 'Snowflake'
   }
 ];
-
