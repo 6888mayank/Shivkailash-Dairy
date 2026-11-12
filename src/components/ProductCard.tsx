@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { Product } from '@/types';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { MessageCircle, Check, Sparkles, Shield, Heart, Clock } from 'lucide-react';
+import SmartImage from './SmartImage';
 
 interface ProductCardProps {
   product: Product;
@@ -30,9 +30,10 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div>
         {/* Product Image Header */}
         <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-forest-soft">
-          <Image
+          <SmartImage
             src={product.image}
             alt={productName}
+            category={product.id === 'a2-milk' ? 'milk' : 'ghee'}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"

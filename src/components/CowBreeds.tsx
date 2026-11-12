@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { cowBreeds } from '@/data/cows';
 import { useLanguage } from '@/context/LanguageContext';
 import { Sparkles, Award, Sun, Heart, CheckCircle2 } from 'lucide-react';
+import SmartImage from './SmartImage';
 
 export default function CowBreeds() {
   const { language, t } = useLanguage();
@@ -36,9 +36,10 @@ export default function CowBreeds() {
               <div>
                 {/* Photo Header */}
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-forest-soft">
-                  <Image
+                  <SmartImage
                     src={breed.image}
                     alt={breed.nameEn}
+                    category="cows"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"

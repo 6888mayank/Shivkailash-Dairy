@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { galleryItems } from '@/data/gallery';
 import { GalleryItem } from '@/types';
+import SmartImage from './SmartImage';
 import {
   Camera,
   Maximize2,
@@ -14,19 +14,23 @@ import {
   MessageCircle,
   ArrowRight,
   Sparkles,
-  Award,
 } from 'lucide-react';
 
 export default function PhotoCardsSection() {
   const { language } = useLanguage();
   const { createWhatsAppLink } = usePrice();
   const [selectedPhoto, setSelectedPhoto] = useState<GalleryItem | null>(null);
-  const [filter, setFilter] = useState<'all' | 'cows' | 'ghee' | 'milk'>('all');
+  const [filter, setFilter] = useState<'all' | 'cows' | 'ghee' | 'milk' | 'farm'>('all');
 
   const filteredItems =
     filter === 'all'
-      ? galleryItems.slice(0, 6)
-      : galleryItems.filter((item) => item.category === filter).slice(0, 6);
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === filter);
+
+  const cowCount = galleryItems.filter((i) => i.category === 'cows').length;
+  const gheeCount = galleryItems.filter((i) => i.category === 'ghee').length;
+  const milkCount = galleryItems.filter((i) => i.category === 'milk').length;
+  const farmCount = galleryItems.filter((i) => i.category === 'farm').length;
 
   return (
     <section className="py-16 sm:py-24 bg-warm border-t border-warm-border" id="photo-gallery">
@@ -35,66 +39,76 @@ export default function PhotoCardsSection() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-forest-soft text-forest text-xs font-bold uppercase tracking-wider mb-3">
             <Camera className="w-3.5 h-3.5 text-gold" />
-            {language === 'hi' ? 'प्रामाणिक फोटो कार्ड्स' : 'Authentic Farm Photo Cards'}
+            {language === 'hi' ? 'प्रामाणिक फोटो एवं दृश्य कार्ड्स' : 'Authentic Farm Photo & Visual Cards'}
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-forest">
             {language === 'hi'
-              ? 'हमारे फार्म की वास्तविक झलकियां'
-              : 'Real Moments from Kailash Kamdhenu Farm'}
+              ? 'हमारे फार्म के 16 प्रामाणिक फोटो कार्ड्स'
+              : '16 Authentic Photo Cards from Kailash Kamdhenu'}
           </h2>
           <p className="text-earth-muted text-sm sm:text-base mt-3 leading-relaxed">
             {language === 'hi'
-              ? '25 साहीवाल व गीर गायें, वैदिक बिलौना मंथन और बरियारपुर (देवरिया) फार्म के प्राकृतिक वातावरण के वास्तविक फोटो कार्ड।'
-              : 'Genuine photographs of our 25 indigenous cows, traditional wooden Bilona churning, and our clean Gaushala at Bariyarpur, Deoria.'}
+              ? '25 साहीवाल व गीर गायें, वैदिक बिलौना मंथन, झागदार ताजा दूध और बरियारपुर (देवरिया) फार्म के प्राकृतिक वातावरण के सभी फोटो कार्ड।'
+              : 'Explore all photo cards of our 25 indigenous cows, traditional wooden Bilona churning, fresh A2 milk, and clean Gaushala fields.'}
           </p>
 
-          {/* Quick Filter Pills */}
+          {/* Category Filter Pills with Item Counts */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 filter === 'all'
-                  ? 'bg-forest text-white shadow-sm'
+                  ? 'bg-forest text-white shadow-md'
                   : 'bg-warm-cream text-earth-body border border-warm-border hover:border-forest/40'
               }`}
             >
-              {language === 'hi' ? 'सभी फोटो कार्ड' : 'All Photo Cards'}
+              {language === 'hi' ? `सभी फोटो कार्ड (${galleryItems.length})` : `All Photo Cards (${galleryItems.length})`}
             </button>
             <button
               onClick={() => setFilter('cows')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 filter === 'cows'
-                  ? 'bg-forest text-white shadow-sm'
+                  ? 'bg-forest text-white shadow-md'
                   : 'bg-warm-cream text-earth-body border border-warm-border hover:border-forest/40'
               }`}
             >
-              {language === 'hi' ? '🐄 साहीवाल व गीर गायें' : '🐄 Sahiwal & Gir Cows'}
+              🐄 {language === 'hi' ? `देसी गायें (${cowCount})` : `Desi Cows (${cowCount})`}
             </button>
             <button
               onClick={() => setFilter('ghee')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 filter === 'ghee'
-                  ? 'bg-forest text-white shadow-sm'
+                  ? 'bg-forest text-white shadow-md'
                   : 'bg-warm-cream text-earth-body border border-warm-border hover:border-forest/40'
               }`}
             >
-              {language === 'hi' ? '🍯 बिलौना घी निर्माण' : '🍯 Bilona Ghee Making'}
+              🍯 {language === 'hi' ? `बिलौना घी (${gheeCount})` : `Bilona Ghee (${gheeCount})`}
             </button>
             <button
               onClick={() => setFilter('milk')}
-              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                 filter === 'milk'
-                  ? 'bg-forest text-white shadow-sm'
+                  ? 'bg-forest text-white shadow-md'
                   : 'bg-warm-cream text-earth-body border border-warm-border hover:border-forest/40'
               }`}
             >
-              {language === 'hi' ? '🥛 ताजा शुद्ध A2 दूध' : '🥛 Fresh A2 Milk'}
+              🥛 {language === 'hi' ? `शुद्ध A2 दूध (${milkCount})` : `Pure Milk (${milkCount})`}
+            </button>
+            <button
+              onClick={() => setFilter('farm')}
+              className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                filter === 'farm'
+                  ? 'bg-forest text-white shadow-md'
+                  : 'bg-warm-cream text-earth-body border border-warm-border hover:border-forest/40'
+              }`}
+            >
+              🌿 {language === 'hi' ? `फार्म व चारा (${farmCount})` : `Farm & Shed (${farmCount})`}
             </button>
           </div>
         </div>
 
         {/* Photo Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredItems.map((item) => {
             const title = language === 'hi' ? item.titleHi : item.titleEn;
             const caption = language === 'hi' ? item.captionHi : item.captionEn;
@@ -106,39 +120,32 @@ export default function PhotoCardsSection() {
                 className="bg-white rounded-3xl border border-warm-border shadow-soft hover:shadow-elevated transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:border-gold/60"
               >
                 <div>
-                  {/* Photo Container */}
+                  {/* Photo Frame Container */}
                   <div
-                    className="relative h-64 sm:h-72 w-full overflow-hidden bg-forest-soft cursor-pointer"
+                    className="relative h-60 w-full overflow-hidden bg-forest-soft cursor-pointer"
                     onClick={() => setSelectedPhoto(item)}
                   >
-                    <Image
+                    <SmartImage
                       src={item.image}
                       alt={title}
+                      category={item.category}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                     {/* Category Badge */}
-                    <div className="absolute top-3.5 left-3.5">
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-forest/90 text-white text-[11px] font-bold shadow-md backdrop-blur-sm border border-white/20">
+                    <div className="absolute top-3 left-3">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-forest/90 text-white text-[10px] font-bold shadow-md backdrop-blur-sm border border-white/20">
                         <Sparkles className="w-3 h-3 text-gold" />
                         {item.category === 'cows'
-                          ? language === 'hi'
-                            ? 'देसी गोवंश'
-                            : 'Indigenous Cow'
+                          ? language === 'hi' ? 'देसी गोवंश' : 'Indigenous Cow'
                           : item.category === 'ghee'
-                          ? language === 'hi'
-                            ? 'वैदिक बिलौना'
-                            : 'Vedic Bilona'
+                          ? language === 'hi' ? 'वैदिक बिलौना' : 'Vedic Bilona'
                           : item.category === 'milk'
-                          ? language === 'hi'
-                            ? 'ताजा A2 दूध'
-                            : 'Raw A2 Milk'
-                          : language === 'hi'
-                          ? 'फार्म परिसर'
-                          : 'Farm Facility'}
+                          ? language === 'hi' ? 'ताजा A2 दूध' : 'Raw A2 Milk'
+                          : language === 'hi' ? 'फार्म परिसर' : 'Gaushala'}
                       </span>
                     </div>
 
@@ -149,7 +156,7 @@ export default function PhotoCardsSection() {
                         e.stopPropagation();
                         setSelectedPhoto(item);
                       }}
-                      className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md text-white flex items-center justify-center opacity-80 hover:opacity-100 hover:bg-forest transition-all"
+                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md text-white flex items-center justify-center opacity-80 hover:opacity-100 hover:bg-forest transition-all"
                       title={language === 'hi' ? 'बड़ी फोटो देखें' : 'View Fullscreen'}
                     >
                       <Maximize2 className="w-3.5 h-3.5" />
@@ -157,24 +164,24 @@ export default function PhotoCardsSection() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5 sm:p-6 space-y-2">
-                    <h3 className="font-serif font-bold text-lg text-earth-dark group-hover:text-forest transition-colors">
+                  <div className="p-4 sm:p-5 space-y-1.5">
+                    <h3 className="font-serif font-bold text-base text-earth-dark group-hover:text-forest transition-colors leading-snug">
                       {title}
                     </h3>
-                    <p className="text-xs text-earth-muted leading-relaxed line-clamp-2">
+                    <p className="text-[11px] text-earth-muted leading-relaxed line-clamp-2">
                       {caption}
                     </p>
                   </div>
                 </div>
 
                 {/* Card Action Footer */}
-                <div className="p-5 pt-0 flex items-center justify-between border-t border-warm-border/60 mt-2">
+                <div className="p-4 pt-0 flex items-center justify-between border-t border-warm-border/60 mt-2">
                   <button
                     type="button"
                     onClick={() => setSelectedPhoto(item)}
-                    className="text-xs font-bold text-forest hover:text-gold-dark transition-colors flex items-center gap-1"
+                    className="text-[11px] font-bold text-forest hover:text-gold-dark transition-colors flex items-center gap-1"
                   >
-                    <span>{language === 'hi' ? 'बड़ी फोटो देखें' : 'Enlarge'}</span>
+                    <span>{language === 'hi' ? 'बड़ा देखें' : 'Enlarge'}</span>
                     <span>›</span>
                   </button>
 
@@ -182,11 +189,11 @@ export default function PhotoCardsSection() {
                     href={waInquiry}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366] text-[#128C7E] hover:text-white text-xs font-bold transition-all"
-                    title="Ask on WhatsApp"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366] text-[#128C7E] hover:text-white text-[11px] font-bold transition-all"
+                    title="Inquire on WhatsApp"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                    <span>{language === 'hi' ? 'WhatsApp पूछें' : 'Inquire'}</span>
+                    <MessageCircle className="w-3 h-3 fill-current" />
+                    <span>{language === 'hi' ? 'पूछें' : 'Inquire'}</span>
                   </a>
                 </div>
               </div>
@@ -200,7 +207,7 @@ export default function PhotoCardsSection() {
             href="/gallery"
             className="inline-flex items-center justify-center gap-2 py-3.5 px-8 rounded-2xl bg-forest hover:bg-forest-light text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-elevated transition-all"
           >
-            <span>{language === 'hi' ? 'पूरी फार्म फोटो गैलरी देखें' : 'View Full Photo Gallery'}</span>
+            <span>{language === 'hi' ? 'समस्त 16 फार्म फोटो कार्ड्स देखें' : 'Explore All 16 Farm Photo Cards'}</span>
             <ArrowRight className="w-4 h-4 text-gold" />
           </Link>
         </div>
@@ -227,9 +234,10 @@ export default function PhotoCardsSection() {
 
             {/* Photo */}
             <div className="relative h-[55vh] sm:h-[65vh] w-full bg-black">
-              <Image
+              <SmartImage
                 src={selectedPhoto.image}
                 alt={language === 'hi' ? selectedPhoto.titleHi : selectedPhoto.titleEn}
+                category={selectedPhoto.category}
                 fill
                 className="object-contain"
               />
@@ -253,7 +261,7 @@ export default function PhotoCardsSection() {
                 <a
                   href={createWhatsAppLink(
                     language === 'hi' ? selectedPhoto.titleHi : selectedPhoto.titleEn,
-                    'Photo Inquiry'
+                    'Photo Card Inquiry'
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -276,4 +284,3 @@ export default function PhotoCardsSection() {
     </section>
   );
 }
-

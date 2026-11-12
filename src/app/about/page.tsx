@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { farmConfig } from '@/data/config';
 import CowBreeds from '@/components/CowBreeds';
 import QualityProcess from '@/components/QualityProcess';
+import SmartImage from '@/components/SmartImage';
 import {
   Heart,
   ShieldCheck,
@@ -89,9 +89,10 @@ export default function AboutPage() {
             {/* Farm Visual Card */}
             <div className="lg:col-span-5 relative">
               <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-elevated border-4 border-warm-cream">
-                <Image
+                <SmartImage
                   src="/images/sahiwal-cow.jpg"
                   alt="Sahiwal cow at Kailash Kamdhenu Dairy Farm"
+                  category="cows"
                   fill
                   className="object-cover"
                 />
