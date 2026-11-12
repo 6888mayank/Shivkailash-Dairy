@@ -390,3 +390,4 @@ export function FarmIllustrationSvg({ className = 'w-full h-full' }: { className
     </svg>
   );
 }
+
