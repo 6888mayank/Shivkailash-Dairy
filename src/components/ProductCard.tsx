@@ -91,31 +91,49 @@ export default function ProductCard({ product }: ProductCardProps) {
                     }`}
                   >
                     <span className="text-xs font-bold">{sizeLabel}</span>
-                    <span className="text-xs font-extrabold text-forest mt-0.5">₹{variant.price}</span>
+                    <span className="text-[11px] font-extrabold text-forest mt-0.5">
+                      {language === 'hi' ? `₹${variant.price}* से शुरू` : `From ₹${variant.price}*`}
+                    </span>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Pricing Highlight Box */}
-          <div className="bg-warm-card border border-gold/30 rounded-2xl p-4 flex items-center justify-between shadow-soft">
-            <div>
-              <span className="text-[11px] font-bold text-earth-muted uppercase tracking-wider block">
-                {language === 'hi' ? 'निर्धारित मूल्य' : 'Direct Farm Price'}
-              </span>
-              <div className="flex items-baseline gap-1 mt-0.5">
-                <span className="text-2xl sm:text-3xl font-extrabold text-forest font-serif">
-                  ₹{activeVariant.price}
+          {/* Pricing Highlight Box with Variable Notice */}
+          <div className="bg-warm-card border border-gold/40 rounded-2xl p-4 shadow-soft space-y-2.5">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <span className="text-[10px] font-bold text-forest uppercase tracking-wider block">
+                  {t.products.indicativePrice}
                 </span>
-                <span className="text-xs font-medium text-earth-muted">
-                  / {activeSizeName}
-                </span>
+                <div className="flex items-baseline gap-1 mt-0.5">
+                  <span className="text-xs font-bold text-earth-muted">
+                    {language === 'hi' ? 'लगभग' : 'Approx'}
+                  </span>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-forest font-serif">
+                    ₹{activeVariant.price}*
+                  </span>
+                  <span className="text-xs font-medium text-earth-muted">
+                    / {activeSizeName}
+                  </span>
+                </div>
               </div>
+              <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-forest/10 text-forest border border-forest/20 shrink-0">
+                {activeVariant.unit}
+              </span>
             </div>
-            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-forest/10 text-forest border border-forest/20">
-              {activeVariant.unit}
-            </span>
+
+            {/* Variable Price & WhatsApp Divert Banner */}
+            <div className="p-2.5 rounded-xl bg-gold/15 border border-gold/30 text-[11px] text-earth-dark flex items-start gap-2">
+              <span className="text-gold-dark text-sm leading-none mt-0.5">💬</span>
+              <p className="leading-snug">
+                <strong>{language === 'hi' ? 'सटीक रेट के लिए:' : 'For Exact Price:'}</strong>{' '}
+                {language === 'hi'
+                  ? 'मौसम व दैनिक बैच अनुसार मूल्य में अंतर संभव है। आज का सटीक रेट जानने हेतु सीधे WhatsApp पर पूछें।'
+                  : 'Prices vary slightly based on season & daily fresh batch. Tap WhatsApp below for today’s exact quote.'}
+              </p>
+            </div>
           </div>
 
           {/* Key Benefits List */}
@@ -151,19 +169,19 @@ export default function ProductCard({ product }: ProductCardProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm shadow-md hover:shadow-elevated transition-all group-hover:scale-[1.01]"
+          className="w-full flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm shadow-md hover:shadow-elevated transition-all group-hover:scale-[1.01]"
         >
-          <MessageCircle className="w-5 h-5 fill-white" />
+          <MessageCircle className="w-5 h-5 fill-white shrink-0" />
           <span>
             {language === 'hi'
-              ? `${activeSizeName} WhatsApp पर मंगाएं`
-              : `Order ${activeSizeName} on WhatsApp`}
+              ? `${activeSizeName} का सटीक रेट व ऑर्डर WhatsApp पर जानें`
+              : `Get Today's Exact Rate for ${activeSizeName} on WhatsApp`}
           </span>
         </a>
         <p className="text-center text-[10px] text-earth-muted mt-2">
           {language === 'hi'
-            ? 'क्लिक करते ही WhatsApp पर पूर्व-लिखित संदेश खुल जाएगा।'
-            : 'Pre-filled WhatsApp message will open instantly.'}
+            ? '💬 क्लिक करते ही सटीक रेट और डिलीवरी पुष्टि के लिए WhatsApp खुल जाएगा।'
+            : '💬 Opens WhatsApp with your selected product & size for today’s accurate rate.'}
         </p>
       </div>
     </div>

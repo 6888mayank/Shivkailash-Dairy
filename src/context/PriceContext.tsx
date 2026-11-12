@@ -114,11 +114,11 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
 
   const createWhatsAppLink = (productName: string, quantity: string, customNote?: string) => {
     const rawNumber = settings.whatsappNumber.replace(/[^0-9]/g, '');
-    let text = `Namaste Shiv Kailash ji, I would like to order from Kailash Kamdhenu Dairy Farm:\n\n*Product:* ${productName}\n*Quantity:* ${quantity}`;
+    let text = `Namaste Shiv Kailash ji,\nI am contacting from Kailash Kamdhenu Dairy Farm website.\n\n*Product Inquiry:* ${productName}\n*Selected Size:* ${quantity}\n\nPlease share today's accurate price, daily batch availability, and delivery schedule for my area (Deoria / Gorakhpur).`;
     if (customNote) {
       text += `\n*Note:* ${customNote}`;
     }
-    text += `\n\nPlease let me know the availability and delivery timing. Thank you!`;
+    text += `\n\nThank you!`;
     return `https://wa.me/${rawNumber}?text=${encodeURIComponent(text)}`;
   };
 

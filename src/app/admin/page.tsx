@@ -105,6 +105,12 @@ export default function AdminPage() {
               </h2>
             </div>
 
+            <div className="p-3 bg-gold/15 rounded-xl border border-gold/30 text-xs text-earth-dark">
+              💡 {language === 'hi'
+                ? 'नोट: वेबसाइट पर कीमतें सांकेतिक/प्रारंभिक दरों ("₹... से शुरू*") के रूप में दिखती हैं। सटीक मूल्य और ऑर्डर के लिए ग्राहक को WhatsApp पर डायवर्ट किया जाता है।'
+                : 'Note: Prices appear on the website as indicative starting rates ("From ₹...*"). For the exact price quote and order, customers are diverted to WhatsApp.'}
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Milk 500ml */}
               <div>

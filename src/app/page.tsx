@@ -141,6 +141,14 @@ export default function HomePage() {
             <p className="text-earth-muted text-sm sm:text-base mt-3 leading-relaxed">
               {t.products.subtitle}
             </p>
+            <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-earth-dark text-xs font-semibold">
+              <span>💬</span>
+              <span>
+                {language === 'hi'
+                  ? 'मौसम व बैच अनुसार दर में अंतर संभव • आज का सटीक रेट जानने हेतु नीचे WhatsApp पर टैप करें'
+                  : 'Rates vary by season & batch • Tap product card below for today’s accurate rate on WhatsApp'}
+              </span>
+            </div>
           </div>
 
           {/* Product Cards Grid (Milk & Ghee) */}

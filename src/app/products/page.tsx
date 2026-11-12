@@ -41,6 +41,34 @@ export default function ProductsPage() {
           </div>
         </div>
 
+        {/* Variable Pricing & WhatsApp Divert Notice Banner */}
+        <div className="max-w-4xl mx-auto mb-10 p-4 sm:p-5 rounded-2xl bg-gold/15 border-2 border-gold/40 text-earth-dark flex flex-col sm:flex-row items-center justify-between gap-4 shadow-soft">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">📢</span>
+            <div>
+              <p className="text-xs sm:text-sm font-bold text-forest">
+                {language === 'hi'
+                  ? 'महत्वपूर्ण सूचना: फार्म की दरें मौसम व चारे अनुसार बदल सकती हैं'
+                  : 'Important Note: Farm rates vary with seasonal green fodder & batch size'}
+              </p>
+              <p className="text-[11px] sm:text-xs text-earth-muted mt-0.5">
+                {language === 'hi'
+                  ? 'नीचे दिए गए मूल्य सांकेतिक (शुरुआती) हैं। आज का एकदम सटीक रेट और देवरिया/गोरखपुर में डिलीवरी स्लॉट जानने के लिए सीधे WhatsApp पर संदेश भेजें।'
+                  : 'Prices shown below are indicative starting rates. For today’s accurate quote and daily delivery confirmation, please tap to chat on WhatsApp.'}
+              </p>
+            </div>
+          </div>
+          <a
+            href={createWhatsAppLink('Price Inquiry', 'Checking Today’s Live Farm Rate')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold shadow transition-all"
+          >
+            <MessageCircle className="w-4 h-4 fill-white" />
+            <span>{language === 'hi' ? 'आज का सटीक रेट पूछें' : "Ask Today's Rate"}</span>
+          </a>
+        </div>
+
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto mb-20">
           {products.map((product) => (
