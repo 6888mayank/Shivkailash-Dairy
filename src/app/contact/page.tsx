@@ -169,7 +169,7 @@ export default function ContactPage() {
                 {language === 'hi' ? 'फार्म का सटीक गूगल मैप्स स्थान' : 'Farm Exact Google Maps Location'}
               </h3>
               <p className="text-xs text-earth-muted">
-                Bariyarpur, Deoria, Uttar Pradesh
+                Village Bariyarpur, Tola Rampur, Post - Bhahara, Deoria, U.P. (274001)
               </p>
             </div>
             <a

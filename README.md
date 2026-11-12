@@ -67,9 +67,9 @@ The farm produces 100% pure raw A2 milk and traditional Vedic Bilona Desi Ghee f
    - Interactive Lightbox image viewer.
 
 5. **Contact & Delivery Page (`/contact`)**
-   - Direct phone call links to Shiv Kailash (`+91 94505 28143`).
-   - WhatsApp quick chat link (`919450528143`).
-   - Complete Gaushala address in Bariyarpur, Deoria.
+   - Direct phone call links to Shiv Kailash (`+91 88876 45957`).
+   - WhatsApp quick chat link (`918887645957`).
+   - Complete Gaushala address: Village Bariyarpur, Tola Rampur, Post - Bhahara, Deoria (U.P. 274001).
    - Google Maps interactive embed and external navigation link.
    - Deoria and Gorakhpur delivery timings and areas.
    - Interactive Order & Enquiry Form that opens WhatsApp with a formatted message containing the customer's name, phone, city, delivery address, product, and instructions.
@@ -109,7 +109,8 @@ Please let me know the availability and delivery timing. Thank you!
 
 ## 📍 Local Business Configuration
 
-- **Farm Location:** Near Primary School, Bariyarpur, Deoria, Uttar Pradesh - 274001
+- **Farm Location:** Village Bariyarpur, Tola Rampur, Post - Bhahara, Deoria, Uttar Pradesh - 274001
+- **Phone / WhatsApp:** +91 88876 45957
 - **Delivery Coverage:**
   - **Deoria:** Raghav Nagar, Civil Lines, Bhatwaliya, Ramgulam Tola, Saket Nagar, Subhash Chowk, Deoria Khas, Malviya Road.
   - **Gorakhpur:** Golghar, Medical College Road, Taramandal, Betiahata, Rapti Nagar, Mohaddipur, Rustampur, Shahpur.

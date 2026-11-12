@@ -55,7 +55,12 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
       const saved = localStorage.getItem('kailash_dairy_settings');
       if (saved) {
         const parsed = JSON.parse(saved);
-        setSettings((prev) => ({ ...prev, ...parsed }));
+        setSettings((prev) => ({
+          ...prev,
+          ...parsed,
+          phoneDisplay: farmConfig.phoneDisplay,
+          whatsappNumber: farmConfig.whatsappNumber,
+        }));
       }
     } catch {
       // ignore
