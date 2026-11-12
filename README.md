@@ -121,3 +121,4 @@ Please let me know the availability and delivery timing. Thank you!
 - **Delivery Coverage:**
   - **Deoria:** Raghav Nagar, Civil Lines, Bhatwaliya, Ramgulam Tola, Saket Nagar, Subhash Chowk, Deoria Khas, Malviya Road.
   - **Gorakhpur:** Golghar, Medical College Road, Taramandal, Betiahata, Rapti Nagar, Mohaddipur, Rustampur, Shahpur.
+

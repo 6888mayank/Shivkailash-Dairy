@@ -66,3 +66,4 @@ export interface GalleryItem {
   captionEn: string;
   captionHi: string;
 }
+

@@ -119,3 +119,4 @@ export const farmConfig: FarmConfig = {
   },
   cowCount: 25
 };
+

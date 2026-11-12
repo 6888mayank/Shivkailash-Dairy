@@ -83,3 +83,4 @@ export const galleryItems: GalleryItem[] = [
     captionHi: 'देवरिया और गोरखपुर में आपके दरवाजे तक सुरक्षित व ठंडी डिलीवरी।'
   }
 ];
+
