@@ -87,11 +87,6 @@ export default function Footer() {
                   <span>›</span> {t.nav.contact}
                 </Link>
               </li>
-              <li>
-                <Link href="/admin" className="text-warm-sand/50 hover:text-gold transition-colors flex items-center gap-1.5">
-                  <span>›</span> {t.nav.admin}
-                </Link>
-              </li>
             </ul>
           </div>
 

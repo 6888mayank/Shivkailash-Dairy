@@ -149,13 +149,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link
-              href="/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 text-xs font-medium text-earth-muted hover:text-forest"
-            >
-              ⚙️ {t.nav.admin}
-            </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-2 pt-3 border-t border-warm-border">

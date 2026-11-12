@@ -17,7 +17,6 @@ The farm produces 100% pure raw A2 milk and traditional Vedic Bilona Desi Ghee f
 - **No unnecessary ecommerce complexity:** No shopping cart, no customer login, no database dependency, no payment gateway fees.
 - **Direct WhatsApp & Phone Ordering:** Every product card and contact form dynamically generates pre-filled WhatsApp messages with the selected product, quantity, customer address, and delivery schedule.
 - **Bilingual (Hindi / English):** Full native dual-language toggle with natural, culturally resonant Hindi translations.
-- **Simple Price & Farm Info Manager (`/admin`):** Allows Shiv Kailash to update milk prices, ghee prices, banner notices, and contact numbers directly in the browser with zero code modifications.
 - **Local SEO & Structured Data:** Pre-configured JSON-LD Schema.org `DairyFarm` markup targeting Deoria and Gorakhpur searches.
 
 ---
@@ -74,13 +73,6 @@ The farm produces 100% pure raw A2 milk and traditional Vedic Bilona Desi Ghee f
    - Google Maps interactive embed and external navigation link.
    - Deoria and Gorakhpur delivery timings and areas.
    - Interactive Order & Enquiry Form that opens WhatsApp with a formatted message containing the customer's name, phone, city, delivery address, product, and instructions.
-
-6. **Admin Price & Info Manager (`/admin`)**
-   - Editable prices for Milk (500ml & 1L) and Ghee (500g & 1kg).
-   - Editable phone number and WhatsApp number.
-   - Editable top announcement banner text in Hindi and English.
-   - Instant browser persistence (`localStorage`) and live preview across all pages.
-   - One-click Reset to Defaults option.
 
 ---
 

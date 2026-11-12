@@ -4,7 +4,6 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { Phone, MapPin, Sparkles } from 'lucide-react';
-import Link from 'next/link';
 
 export default function AnnouncementBar() {
   const { language } = useLanguage();
@@ -35,13 +34,6 @@ export default function AnnouncementBar() {
             <Phone className="w-3.5 h-3.5" />
             <span className="font-semibold">{settings.phoneDisplay}</span>
           </a>
-          <Link
-            href="/admin"
-            className="text-warm-sand/60 hover:text-gold transition-colors text-[11px] underline underline-offset-2"
-            title="Edit product prices"
-          >
-            {language === 'hi' ? 'मूल्य अपडेट' : 'Admin'}
-          </Link>
         </div>
       </div>
     </div>
