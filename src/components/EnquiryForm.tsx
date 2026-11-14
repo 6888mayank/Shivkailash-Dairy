@@ -117,9 +117,10 @@ export default function EnquiryForm() {
               onChange={(e) => setFormData({ ...formData, product: e.target.value })}
               className="w-full px-4 py-3 rounded-xl border border-warm-border bg-warm/50 text-sm focus:outline-none focus:ring-2 focus:ring-forest focus:border-forest transition-all"
             >
-              <option value="Pure A2 Desi Cow Milk">Pure A2 Desi Cow Milk (A2 देसी गाय का दूध)</option>
-              <option value="Traditional Vedic Bilona Ghee">Traditional Vedic Bilona Ghee (पारंपरिक बिलौना घी)</option>
-              <option value="Both Milk & Ghee">Both Milk & Ghee (दूध एवं घी दोनों)</option>
+              <option value="Pure A2 Toned Milk (~₹65/L)">Pure A2 Toned Milk (~₹65/L | A2 टोन्ड दूध)</option>
+              <option value="Pure A2 Full Cream Milk (~₹75/L)">Pure A2 Full Cream Milk (~₹75/L | A2 फुल क्रीम दूध)</option>
+              <option value="Traditional Vedic Bilona Ghee (~₹1500/kg)">Traditional Vedic Bilona Ghee (~₹1,500/kg | पारंपरिक बिलौना घी)</option>
+              <option value="Combo: Milk & Ghee">Combo: Milk & Ghee (दूध एवं घी दोनों)</option>
             </select>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { farmConfig } from '@/data/config';
@@ -29,15 +30,25 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-forest text-gold flex items-center justify-center border-2 border-gold shadow-md">
-                <Milk className="w-6 h-6 text-gold" />
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-gold shadow-lg bg-[#f4ebe1] shrink-0">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Shiv Kailash Ram Krishna - Kailash Kamdhenu Dairy Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div>
-                <h3 className="font-serif font-bold text-xl text-white">
-                  {language === 'hi' ? farmConfig.farmNameHi : farmConfig.farmNameEn}
-                </h3>
+                <div className="flex items-center gap-1.5">
+                  <h3 className="font-serif font-bold text-xl text-white">
+                    {language === 'hi' ? farmConfig.farmNameHi : farmConfig.farmNameEn}
+                  </h3>
+                  <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-gold/20 text-gold border border-gold/40">
+                    SKRK
+                  </span>
+                </div>
                 <p className="text-xs font-semibold text-gold">
-                  {language === 'hi' ? farmConfig.taglineHi : farmConfig.taglineEn}
+                  {language === 'hi' ? 'शुद्धता का विश्वास • सच्चा विश्वास।' : 'Shuddhata Ka Vishwas'}
                 </p>
               </div>
             </div>

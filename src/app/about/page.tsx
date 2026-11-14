@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { farmConfig } from '@/data/config';
@@ -113,6 +114,62 @@ export default function AboutPage() {
                 <div>
                   <p className="font-serif font-extrabold text-xl text-gold">25 Desi Cows</p>
                   <p className="text-[10px] text-warm-sand">100% Sahiwal & Gir Indigenous</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Official Brand Seal & Sacred Heritage Section */}
+        <div className="bg-forest-deep text-white rounded-3xl p-6 sm:p-10 border-2 border-gold/40 shadow-elevated mb-20 relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="md:col-span-4 flex flex-col items-center justify-center text-center">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-gold shadow-2xl bg-[#f4ebe1]">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Shiv Kailash Ram Krishna - SKRK Farm Seal"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <span className="mt-3 text-xs font-bold text-gold uppercase tracking-wider">
+                SHIV KAILASH RAM KRISHNA
+              </span>
+              <span className="text-[11px] text-warm-sand italic">
+                “शुद्धता का विश्वास • Shuddhata Ka Vishwas”
+              </span>
+            </div>
+
+            <div className="md:col-span-8 space-y-4">
+              <span className="inline-block px-3 py-1 rounded-full bg-gold/20 text-gold text-xs font-bold uppercase tracking-wider border border-gold/40">
+                {language === 'hi' ? 'आधिकारिक फार्म प्रतीक एवं दर्शन' : 'Official Brand Seal & Heritage'}
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+                {language === 'hi'
+                  ? 'SKRK: भगवान शिव, प्रभु श्रीराम और श्रीकृष्ण के आशीर्वाद का संगम'
+                  : 'SKRK: Rooted in Divine Reverence, Integrity & Purity'}
+              </h3>
+              <p className="text-xs sm:text-sm text-warm-sand leading-relaxed">
+                {language === 'hi'
+                  ? 'हमारे फार्म का नाम "शिव कैलाश राम कृष्ण (SKRK)" भारतीय सनातन मूल्यों और गोसेवा की पावन परंपरा का प्रतीक है। लोगो में भगवान शिव का त्रिशूल व कैलाश पर्वत पवित्रता का, कामधेनु गोमाता मातृत्व व अमृत दूध का, प्रभु श्रीराम का धनुष सत्य व मर्यादा का, और श्रीकृष्ण का मोर पंख गोपालन व प्रेम का परिचायक है।'
+                  : 'The emblem represents our founding philosophy. Featuring Lord Shiva’s Trishul & Mount Kailash for auspicious purity, divine Kamdhenu Gomata for sacred A2 milk, Lord Ram’s bow for righteousness & unwavering trust, and Lord Krishna’s peacock feather for love and dedicated Gau-seva.'}
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center">
+                <div className="p-2.5 rounded-xl bg-white/10 border border-white/10">
+                  <p className="text-xs font-bold text-gold">🔱 त्रिशूल & कैलाश</p>
+                  <p className="text-[10px] text-warm-sand">अखंड पवित्रता</p>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/10 border border-white/10">
+                  <p className="text-xs font-bold text-gold">🐄 कामधेनु गोमाता</p>
+                  <p className="text-[10px] text-warm-sand">अमृतमयी A2 दूध</p>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/10 border border-white/10">
+                  <p className="text-xs font-bold text-gold">🏹 श्रीराम धनुष</p>
+                  <p className="text-[10px] text-warm-sand">सच्चा विश्वास</p>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white/10 border border-white/10">
+                  <p className="text-xs font-bold text-gold">🦚 कृष्ण मोरपंख</p>
+                  <p className="text-[10px] text-warm-sand">स्नेहपूर्ण गोसेवा</p>
                 </div>
               </div>
             </div>

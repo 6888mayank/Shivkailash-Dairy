@@ -48,76 +48,121 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-          <div className="max-w-3xl space-y-6">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs sm:text-sm font-bold backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span>{t.hero.badge}</span>
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-extrabold tracking-tight text-white leading-tight">
-              {t.hero.heading}
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl sm:text-2xl font-serif font-medium text-gold leading-snug">
-              {t.hero.subtitle}
-            </p>
-
-            {/* Narrative Description */}
-            <p className="text-sm sm:text-base text-warm-sand max-w-2xl leading-relaxed">
-              {t.hero.description}
-            </p>
-
-            {/* WhatsApp Order & Call Now CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              {/* WhatsApp Order Button */}
-              <a
-                href={heroWaLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 py-4 px-7 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base shadow-elevated hover:scale-105 active:scale-95 transition-all"
-              >
-                <MessageCircle className="w-5 h-5 fill-white" />
-                <span>{t.hero.orderWhatsapp}</span>
-              </a>
-
-              {/* Call Now Button */}
-              <a
-                href={`tel:${settings.phoneDisplay}`}
-                className="inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base border border-white/30 backdrop-blur-sm transition-all"
-              >
-                <Phone className="w-5 h-5 text-gold" />
-                <span>{t.hero.callOwner}</span>
-              </a>
-
-              {/* View Products */}
-              <Link
-                href="/products"
-                className="inline-flex items-center justify-center gap-2 py-4 px-5 rounded-2xl text-gold hover:text-white text-sm font-semibold transition-colors"
-              >
-                <span>{t.hero.viewProducts}</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* 4 Trust Highlights Below Hero */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-8 border-t border-white/20">
-              {t.hero.trustBadges.map((badge, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10"
-                >
-                  <p className="text-xs sm:text-sm font-serif font-bold text-gold">
-                    {badge.label}
-                  </p>
-                  <p className="text-[11px] text-warm-sand/80 mt-0.5">
-                    {badge.sub}
-                  </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left Column: Heading & CTAs */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Tagline Badge with Official Logo Thumb */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs sm:text-sm font-bold backdrop-blur-md">
+                <div className="relative w-5 h-5 rounded-full overflow-hidden border border-gold shrink-0">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="SKRK Seal"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <span>{t.hero.badge}</span>
+              </div>
+
+              {/* Main Heading */}
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-extrabold tracking-tight text-white leading-tight">
+                {t.hero.heading}
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-xl sm:text-2xl font-serif font-medium text-gold leading-snug">
+                {t.hero.subtitle}
+              </p>
+
+              {/* Narrative Description */}
+              <p className="text-sm sm:text-base text-warm-sand max-w-2xl leading-relaxed">
+                {t.hero.description}
+              </p>
+
+              {/* WhatsApp Order & Call Now CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                {/* WhatsApp Order Button */}
+                <a
+                  href={heroWaLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 py-4 px-7 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base shadow-elevated hover:scale-105 active:scale-95 transition-all"
+                >
+                  <MessageCircle className="w-5 h-5 fill-white" />
+                  <span>{t.hero.orderWhatsapp}</span>
+                </a>
+
+                {/* Call Now Button */}
+                <a
+                  href={`tel:${settings.phoneDisplay}`}
+                  className="inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base border border-white/30 backdrop-blur-sm transition-all"
+                >
+                  <Phone className="w-5 h-5 text-gold" />
+                  <span>{t.hero.callOwner}</span>
+                </a>
+
+                {/* View Products */}
+                <Link
+                  href="/products"
+                  className="inline-flex items-center justify-center gap-2 py-4 px-5 rounded-2xl text-gold hover:text-white text-sm font-semibold transition-colors"
+                >
+                  <span>{t.hero.viewProducts}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* 4 Trust Highlights Below Hero */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-white/20">
+                {t.hero.trustBadges.map((badge, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white/10 backdrop-blur-md p-3 rounded-xl border border-white/10"
+                  >
+                    <p className="text-xs sm:text-sm font-serif font-bold text-gold">
+                      {badge.label}
+                    </p>
+                    <p className="text-[11px] text-warm-sand/80 mt-0.5">
+                      {badge.sub}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Official SKRK Emblem Logo Showcase */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+              <div className="relative group p-4 sm:p-6 rounded-3xl bg-forest/40 border-2 border-gold/50 backdrop-blur-md shadow-2xl text-center max-w-sm">
+                {/* Glow ring */}
+                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-gold/30 via-forest-light/20 to-gold/30 blur-lg opacity-75 group-hover:opacity-100 transition-opacity" />
+
+                <div className="relative">
+                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 mx-auto rounded-full overflow-hidden border-4 border-gold shadow-2xl bg-[#f4ebe1]">
+                    <Image
+                      src="/images/logo.jpg"
+                      alt="Shiv Kailash Ram Krishna - Official Dairy Logo"
+                      fill
+                      priority
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  <div className="mt-4 space-y-1">
+                    <span className="inline-block px-3 py-1 rounded-full bg-gold/20 text-gold text-[11px] font-bold uppercase tracking-wider border border-gold/40">
+                      आधिकारिक फार्म सील • Official Emblem
+                    </span>
+                    <h3 className="font-serif font-bold text-lg text-white">
+                      SHIV KAILASH RAM KRISHNA (SKRK)
+                    </h3>
+                    <p className="text-xs text-gold-light italic">
+                      “शुद्धता का विश्वास • Shuddhata Ka Vishwas”
+                    </p>
+                    <p className="text-[11px] text-warm-sand/90 pt-1">
+                      Pure A2 Cow Milk • Vedic Bilona Ghee • Curd • Paneer
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -151,8 +196,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Product Cards Grid (Milk & Ghee) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          {/* Product Cards Grid (Toned Milk, Full Cream Milk, Traditional Desi Ghee) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

@@ -34,7 +34,7 @@ export default function GalleryPage() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-forest-soft text-forest text-xs font-bold uppercase tracking-wider mb-3">
             <Camera className="w-3.5 h-3.5 text-gold" />
-            {language === 'hi' ? 'समस्त 16 प्रामाणिक फोटो कार्ड्स' : 'All 16 Farm Photo Cards'}
+            {language === 'hi' ? 'समस्त प्रामाणिक फोटो कार्ड्स' : 'Farm Photo Cards & Official Seal'}
           </span>
           <h1 className="text-3xl sm:text-5xl font-serif font-bold text-forest">
             {language === 'hi' ? 'कैलाश कामधेनु फार्म गैलरी' : 'Kailash Kamdhenu Photo Gallery'}

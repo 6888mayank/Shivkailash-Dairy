@@ -43,8 +43,8 @@ export default function PhotoCardsSection() {
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-forest">
             {language === 'hi'
-              ? 'हमारे फार्म के 16 प्रामाणिक फोटो कार्ड्स'
-              : '16 Authentic Photo Cards from Kailash Kamdhenu'}
+              ? 'हमारे फार्म के प्रामाणिक फोटो कार्ड्स'
+              : 'Authentic Photo Cards from Kailash Kamdhenu (SKRK)'}
           </h2>
           <p className="text-earth-muted text-sm sm:text-base mt-3 leading-relaxed">
             {language === 'hi'

@@ -9,7 +9,8 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 import { farmConfig } from '@/data/config';
 
 export const metadata: Metadata = {
-  title: 'Kailash Kamdhenu Dairy Farm | Pure A2 Desi Cow Milk & Traditional Vedic Ghee in Deoria & Gorakhpur',
+  metadataBase: new URL('https://shivkailash-dairy.vercel.app'),
+  title: 'Kailash Kamdhenu Dairy Farm (SKRK) | Pure A2 Desi Cow Milk & Traditional Vedic Ghee in Deoria & Gorakhpur',
   description:
     'Kailash Kamdhenu Dairy Farm by Shiv Kailash in Bariyarpur, Deoria. Providing 100% pure raw A2 milk and traditional Vedic Bilona Desi Ghee from 25 indigenous Sahiwal and Gir cows. Daily doorstep delivery in Deoria and Gorakhpur. Tagline: Shuddh Doodh, Saccha Vishwas.',
   keywords: [
@@ -27,12 +28,25 @@ export const metadata: Metadata = {
     'पारंपरिक बिलौना घी गोरखपुर',
   ],
   authors: [{ name: 'Shiv Kailash' }],
+  icons: {
+    icon: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
+    shortcut: '/images/logo.jpg',
+  },
   openGraph: {
-    title: 'Kailash Kamdhenu Dairy Farm - Shuddh Doodh, Saccha Vishwas',
+    title: 'Kailash Kamdhenu Dairy Farm (SKRK) - Shuddh Doodh, Saccha Vishwas',
     description:
-      'Pure A2 Milk & Traditional Desi Ghee directly from 25 Sahiwal & Gir cows in Bariyarpur, Deoria. Fresh delivery in Deoria & Gorakhpur.',
-    url: 'https://kailashkamdhenudairy.com',
-    siteName: 'Kailash Kamdhenu Dairy Farm',
+      'Pure A2 Milk (Toned & Full Cream) & Traditional Vedic Bilona Desi Ghee directly from 25 Sahiwal & Gir cows in Bariyarpur, Deoria. Fresh delivery in Deoria & Gorakhpur.',
+    url: 'https://shivkailash-dairy.vercel.app',
+    siteName: 'Kailash Kamdhenu Dairy Farm (SKRK)',
+    images: [
+      {
+        url: '/images/logo.jpg',
+        width: 1024,
+        height: 1024,
+        alt: 'Shiv Kailash Ram Krishna - Kailash Kamdhenu Dairy Farm Logo',
+      },
+    ],
     locale: 'en_IN',
     type: 'website',
   },
@@ -84,7 +98,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐄</text></svg>" />
+        <link rel="icon" href="/images/logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/logo.jpg" />
       </head>
       <body className="min-h-screen flex flex-col bg-warm text-earth-dark font-sans selection:bg-gold/30 selection:text-forest-deep antialiased">
         <LanguageProvider>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
 import { farmConfig } from '@/data/config';
@@ -45,12 +46,32 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             {/* Owner Direct Call Card */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-warm-border shadow-elevated">
-              <span className="text-[11px] font-bold text-gold-dark uppercase tracking-wider block mb-1">
-                {language === 'hi' ? 'सीधा संपर्क सूत्र' : 'Direct Farm Owner'}
-              </span>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-forest mb-4">
-                {language === 'hi' ? farmConfig.ownerNameHi : farmConfig.ownerNameEn}
-              </h3>
+              <div className="flex items-center gap-4 mb-5 pb-4 border-b border-warm-border">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gold shadow-md shrink-0 bg-[#f4ebe1]">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="Shiv Kailash Ram Krishna - SKRK Farm Emblem"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold text-gold-dark uppercase tracking-wider block">
+                      {language === 'hi' ? 'सीधा संपर्क सूत्र' : 'Direct Farm Contact'}
+                    </span>
+                    <span className="text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-gold/20 text-earth-dark border border-gold/40">
+                      SKRK
+                    </span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-forest">
+                    {language === 'hi' ? farmConfig.ownerNameHi : farmConfig.ownerNameEn}
+                  </h3>
+                  <span className="text-xs text-earth-muted">
+                    {language === 'hi' ? 'कैलाश कामधेनु डेयरी फार्म, बरियारपुर' : 'Kailash Kamdhenu Dairy Farm'}
+                  </span>
+                </div>
+              </div>
 
               <div className="space-y-4">
                 {/* Primary Phone */}

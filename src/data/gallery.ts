@@ -2,6 +2,15 @@ import { GalleryItem } from '@/types';
 
 export const galleryItems: GalleryItem[] = [
   {
+    id: 'g-seal',
+    titleEn: 'Official Farm Seal • SKRK Emblem',
+    titleHi: 'आधिकारिक फार्म सील • SKRK प्रतीक',
+    category: 'farm',
+    image: '/images/logo.jpg',
+    captionEn: 'Shiv Kailash Ram Krishna (SKRK) - Shuddhata Ka Vishwas authentic dairy farm emblem.',
+    captionHi: 'शिव कैलाश राम कृष्ण (SKRK) - शुद्धता का विश्वास, हमारे फार्म का आधिकारिक पवित्र प्रतीक चिन्ह।'
+  },
+  {
     id: 'g-1',
     titleEn: 'Majestic Sahiwal Mother Cow',
     titleHi: 'हमारी साहीवाल कामधेनु गौमाता',

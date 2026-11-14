@@ -6,8 +6,10 @@ import { farmConfig } from '@/data/config';
 import { Product } from '@/types';
 
 export interface PriceSettings {
-  milk500: number;
-  milk1000: number;
+  toned500: number;
+  toned1000: number;
+  fullCream500: number;
+  fullCream1000: number;
   ghee500: number;
   ghee1000: number;
   phoneDisplay: string;
@@ -17,14 +19,16 @@ export interface PriceSettings {
 }
 
 const defaultSettings: PriceSettings = {
-  milk500: 45,
-  milk1000: 85,
-  ghee500: 950,
-  ghee1000: 1850,
+  toned500: 35,
+  toned1000: 65,
+  fullCream500: 40,
+  fullCream1000: 75,
+  ghee500: 800,
+  ghee1000: 1500,
   phoneDisplay: farmConfig.phoneDisplay,
   whatsappNumber: farmConfig.whatsappNumber,
-  announcementTextEn: '🌿 Fresh Morning A2 Milk Batch Dispatched Daily Across Deoria & Gorakhpur • 100% Raw & Pure',
-  announcementTextHi: '🌿 देवरिया एवं गोरखपुर में प्रतिदिन प्रातःकाल ताजा शुद्ध A2 दूध व बिलौना घी की होम डिलीवरी',
+  announcementTextEn: '🌿 Fresh Morning A2 Milk & Vedic Bilona Ghee Dispatched Daily Across Deoria & Gorakhpur • 100% Raw & Pure',
+  announcementTextHi: '🌿 देवरिया एवं गोरखपुर में प्रतिदिन प्रातःकाल ताजा शुद्ध A2 दूध व वैदिक बिलौना घी की होम डिलीवरी',
 };
 
 interface PriceContextType {
@@ -52,7 +56,7 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('kailash_dairy_settings');
+      const saved = localStorage.getItem('kailash_dairy_settings_v2');
       if (saved) {
         const parsed = JSON.parse(saved);
         setSettings((prev) => ({
@@ -71,12 +75,22 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setProducts(() => {
       return initialProducts.map((p) => {
-        if (p.id === 'a2-milk') {
+        if (p.id === 'toned-milk') {
           return {
             ...p,
             variants: p.variants.map((v) => {
-              if (v.id === 'milk-500ml') return { ...v, price: settings.milk500 };
-              if (v.id === 'milk-1000ml') return { ...v, price: settings.milk1000 };
+              if (v.id === 'toned-500ml') return { ...v, price: settings.toned500 };
+              if (v.id === 'toned-1000ml') return { ...v, price: settings.toned1000 };
+              return v;
+            }),
+          };
+        }
+        if (p.id === 'full-cream-milk') {
+          return {
+            ...p,
+            variants: p.variants.map((v) => {
+              if (v.id === 'fullcream-500ml') return { ...v, price: settings.fullCream500 };
+              if (v.id === 'fullcream-1000ml') return { ...v, price: settings.fullCream1000 };
               return v;
             }),
           };
@@ -100,7 +114,7 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
     setSettings((prev) => {
       const updated = { ...prev, ...newSettings };
       try {
-        localStorage.setItem('kailash_dairy_settings', JSON.stringify(updated));
+        localStorage.setItem('kailash_dairy_settings_v2', JSON.stringify(updated));
       } catch {
         // ignore
       }
@@ -111,7 +125,7 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
   const resetSettings = () => {
     setSettings(defaultSettings);
     try {
-      localStorage.removeItem('kailash_dairy_settings');
+      localStorage.removeItem('kailash_dairy_settings_v2');
     } catch {
       // ignore
     }
@@ -119,7 +133,7 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
 
   const createWhatsAppLink = (productName: string, quantity: string, customNote?: string) => {
     const rawNumber = settings.whatsappNumber.replace(/[^0-9]/g, '');
-    let text = `Namaste Shiv Kailash ji,\nI am contacting from Kailash Kamdhenu Dairy Farm website.\n\n*Product Inquiry:* ${productName}\n*Selected Size:* ${quantity}\n\nPlease share today's accurate price, daily batch availability, and delivery schedule for my area (Deoria / Gorakhpur).`;
+    let text = `Namaste Shiv Kailash ji,\nI am contacting from Kailash Kamdhenu Dairy Farm (SKRK) website.\n\n*Product Inquiry:* ${productName}\n*Selected Size:* ${quantity}\n\nPlease share today's accurate price, daily batch availability, and delivery schedule for my area (Deoria / Gorakhpur).`;
     if (customNote) {
       text += `\n*Note:* ${customNote}`;
     }
@@ -137,7 +151,7 @@ export function PriceProvider({ children }: { children: React.ReactNode }) {
     notes?: string;
   }) => {
     const rawNumber = settings.whatsappNumber.replace(/[^0-9]/g, '');
-    let text = `*New Order / Enquiry - Kailash Kamdhenu Dairy Farm*\n\n`;
+    let text = `*New Order / Enquiry - Kailash Kamdhenu Dairy Farm (SKRK)*\n\n`;
     text += `👤 *Name:* ${details.name}\n`;
     text += `📞 *Phone:* ${details.phone}\n`;
     text += `📍 *City:* ${details.city}\n`;
@@ -174,4 +188,3 @@ export function usePrice() {
   }
   return context;
 }
-

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/context/LanguageContext';
 import { usePrice } from '@/context/PriceContext';
@@ -36,20 +37,31 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 bg-warm/95 backdrop-blur-md border-b border-warm-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo & Farm Name */}
+          {/* Official Farm Logo & Name */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 rounded-full bg-forest text-gold flex items-center justify-center shadow-md border-2 border-gold/40 group-hover:scale-105 transition-transform">
-              <Milk className="w-6 h-6 text-gold" />
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-gold shadow-md shrink-0 group-hover:scale-105 transition-transform bg-[#f4ebe1]">
+              <Image
+                src="/images/logo.jpg"
+                alt="Shiv Kailash Ram Krishna - Kailash Kamdhenu Dairy Logo"
+                fill
+                priority
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg sm:text-xl text-forest tracking-tight leading-tight">
-                {language === 'hi' ? 'कैलाश कामधेनु डेयरी' : 'Kailash Kamdhenu'}
-              </span>
-              <span className="text-xs sm:text-sm font-semibold text-gold-dark tracking-wide">
-                {language === 'hi' ? 'शुद्ध दूध, सच्चा विश्वास।' : 'Shuddh Doodh, Saccha Vishwas.'}
+              <div className="flex items-center gap-1.5">
+                <span className="font-serif font-bold text-base sm:text-lg text-forest tracking-tight leading-tight">
+                  {language === 'hi' ? 'कैलाश कामधेनु' : 'Kailash Kamdhenu'}
+                </span>
+                <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-gold/25 text-earth-dark border border-gold/40">
+                  SKRK
+                </span>
+              </div>
+              <span className="text-xs sm:text-xs font-semibold text-gold-dark tracking-wide">
+                {language === 'hi' ? 'शुद्धता का विश्वास • शुद्ध दूध' : 'Shuddhata Ka Vishwas'}
               </span>
               <span className="text-[10px] text-earth-muted font-medium hidden sm:inline-block">
-                Bariyarpur, Deoria • Sahiwal & Gir A2 Dairy
+                Bariyarpur, Deoria • 25 Desi Cows
               </span>
             </div>
           </Link>
