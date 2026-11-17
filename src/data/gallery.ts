@@ -69,7 +69,7 @@ export const galleryItems: GalleryItem[] = [
     titleEn: 'Pure Cultured Vedic Makkhan',
     titleHi: 'दही मंथन से प्राप्त शुद्ध नवनीत (मक्खन)',
     category: 'ghee',
-    image: '/images/desi-ghee.jpg',
+    image: '/images/desi-ghee-backup.jpg',
     captionEn: 'Rich, aromatic white butter extracted before slow firewood simmering.',
     captionHi: 'मंथन से निकला ताजा मक्खन जो धीमी आंच पर पककर दिव्य सुनहरे घी में बदलता है।'
   },
