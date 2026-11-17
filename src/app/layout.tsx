@@ -70,7 +70,7 @@ export default function RootLayout({
     telephone: farmConfig.phoneDisplay,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Village Bariyarpur, Tola Rampur, Post - Bhahara',
+      streetAddress: 'Village Bariyarpur, Tola Rampur, Post - Badhara, Near Rambharosa Chauraha',
       addressLocality: 'Deoria',
       addressRegion: 'Uttar Pradesh',
       postalCode: '274001',

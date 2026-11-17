@@ -181,8 +181,8 @@ export default function DeliveryZones() {
             <span className="text-base">📍</span>
             <span>
               {language === 'hi'
-                ? 'हमारा फार्म ग्राम बरियारपुर, टोला रामपुर (पोस्ट - भाहरा), देवरिया (उ.प्र. 274001) में स्थित है। आप फार्म पर आकर भी शुद्ध दूध व घी ले सकते हैं।'
-                : 'Our farm is located at Village Bariyarpur, Tola Rampur, Post - Bhahara, Deoria (U.P. 274001). You are welcome to visit our Gaushala anytime.'}
+                ? 'हमारा फार्म बरियारपुर टोला रामपुर, पोस्ट- बड़हरा (निकट रामभरोसा चौराहा), डिस्ट्रिक्ट देवरिया (उ.प्र. 274001) में स्थित है। आप फार्म पर आकर भी शुद्ध दूध व घी ले सकते हैं।'
+                : 'Our farm is located at Bariyarpur Tola Rampur, Post - Badhara, Near Rambharosa Chauraha, District Deoria (U.P. 274001). You are welcome to visit our Gaushala anytime.'}
             </span>
           </div>
           <a

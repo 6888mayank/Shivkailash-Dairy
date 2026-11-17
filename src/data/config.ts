@@ -51,9 +51,9 @@ export const farmConfig: FarmConfig = {
   whatsappNumber: '918887645957',
   altPhone: '+91 88876 45957',
   email: 'kailashkamdhenudairy@gmail.com',
-  addressEn: 'Village Bariyarpur, Tola Rampur, Post - Bhahara, Deoria, Uttar Pradesh - 274001',
-  addressHi: 'ग्राम बरियारपुर, टोला रामपुर, पोस्ट - भाहरा, देवरिया, उत्तर प्रदेश - 274001',
-  googleMapsUrl: 'https://maps.google.com/?q=Bariyarpur,Rampur,Deoria,Uttar+Pradesh,274001',
+  addressEn: 'Village Bariyarpur, Tola Rampur, Post - Badhara, Near Rambharosa Chauraha, District Deoria, Uttar Pradesh - 274001',
+  addressHi: 'बरियारपुर टोला रामपुर, पोस्ट- बड़हरा (निकट रामभरोसा चौराहा), डिस्ट्रिक्ट देवरिया, उत्तर प्रदेश - 274001',
+  googleMapsUrl: 'https://maps.google.com/?q=Bariyarpur,Rampur,Badhara,Deoria,Uttar+Pradesh,274001',
   googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14300.279822692298!2d83.74238545!3d26.4975218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3993c3c78351fd67%3A0xe54e6fe843a96898!2sBariyarpur%2C%20Deoria%2C%20Uttar%20Pradesh%20274001!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
   deliveryAreas: {
     deoria: {
