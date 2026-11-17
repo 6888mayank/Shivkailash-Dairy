@@ -207,7 +207,7 @@ export default function PhotoCardsSection() {
             href="/gallery"
             className="inline-flex items-center justify-center gap-2 py-3.5 px-8 rounded-2xl bg-forest hover:bg-forest-light text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-elevated transition-all"
           >
-            <span>{language === 'hi' ? 'समस्त 16 फार्म फोटो कार्ड्स देखें' : 'Explore All 16 Farm Photo Cards'}</span>
+            <span>{language === 'hi' ? 'समस्त फार्म फोटो कार्ड्स देखें' : 'Explore All Farm Photo Cards'}</span>
             <ArrowRight className="w-4 h-4 text-gold" />
           </Link>
         </div>

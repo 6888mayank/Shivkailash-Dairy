@@ -119,15 +119,6 @@ export const galleryItems: GalleryItem[] = [
     captionHi: 'दूध के पोषक तत्वों को सुरक्षित रखने के लिए स्वच्छ खाद्य-ग्रेड स्टेनलेस स्टील केन।'
   },
   {
-    id: 'g-13',
-    titleEn: 'Clean & Airy Farm Shed',
-    titleHi: 'स्वच्छ व हवादार गोशाला परिसर',
-    category: 'farm',
-    image: '/images/farm-shed.jpg',
-    captionEn: 'Spacious, hygienic resting areas with clean rubber floor mats, fresh water, and open air.',
-    captionHi: 'स्वच्छ रबर मैट्स, 24 घंटे ताज़ा पानी और प्राकृतिक हवादार वातावरण युक्त शेड।'
-  },
-  {
     id: 'g-14',
     titleEn: 'Organic Green Fodder Fields',
     titleHi: 'प्राकृतिक हरे चारे के खेत',
